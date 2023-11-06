@@ -1,5 +1,5 @@
-var roleHarvester = {
-  run: function(creep) {
+module.exports = {
+  run(creep) {
     if (creep.store.getFreeCapacity() > 0) {
         var sources = creep.find(FIND_SOURCES);
         if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
@@ -13,5 +13,3 @@ var roleHarvester = {
     }
   }
 };
-
-module.exports("role.harvester");
