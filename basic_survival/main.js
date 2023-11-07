@@ -1,7 +1,10 @@
 var roleHarvester = require("role.harvester");
 module.exports.loop = function() {
   if (!Game.creeps.length) {
-    Game.spawns["Spawn1"].spawnCreep([WORK,CARRY,MOVE],"Harvester",{memory:{role:"harvester"}});
+    Game.spawns["Spawn1"].spawnCreep([WORK,CARRY,MOVE],"Harvester1",{memory:{role:"harvester"}});
+  }
+  if (Game.creeps.length < 2) {
+    Game.spawns["Spawn1"].spawnCreep([WORK,CARRY,MOVE],"Harvester2",{memory:{role:"harvester"}});
   }
   for (var i in Game.creeps) {
     if(!Game.creeps[i]) {
